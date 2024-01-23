@@ -1,0 +1,65 @@
+.header {
+  position: absolute;
+  width: 100%;
+  padding: 16px 0;
+  transition: .2s ease;
+  z-index: 99;
+  background: rgba(255, 255, 255, 0.35);
+
+  @include media-breakpoint-down(lg) {
+    height: auto;
+    overflow: hidden;
+    z-index: 99;
+  }
+
+  &.sticky {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 8px 0;
+    box-shadow: 0 3px 5px rgb(0 0 0 / 40%);
+    background: #2a2a2a;
+
+    .header__title {
+      font-size: 26px;
+
+      @include media-breakpoint-down(lg) {
+        font-size: 24px;
+      }
+
+      @include media-breakpoint-down(md) {
+        font-size: 20px;
+      }
+    }
+  }
+
+  &__main {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    column-gap: 10px;
+  }
+
+  &__title {
+    color: $color-white;
+    font-weight: 400;
+    font-size: 33px;
+    line-height: 140%;
+    transition: 0.15s ease-out;
+
+    @include media-breakpoint-down(lg) {
+      font-size: 28px;
+    }
+
+    @include media-breakpoint-down(md) {
+      font-size: 22px;
+    }
+  }
+
+  &__img {
+    @include media-breakpoint-down(xs) {
+      min-width: 38px;
+    }
+  }
+}

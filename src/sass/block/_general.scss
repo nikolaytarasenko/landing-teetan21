@@ -1,0 +1,204 @@
+* {
+  box-sizing: border-box;
+}
+
+html {
+  height: 100%;
+  font-size: $base-font-size;
+  scroll-padding-top: 100px;
+}
+
+body {
+  height: 100%;
+  font-family: $font-family;
+  background: $color-white;
+  color: $color-grey;
+  overflow-x: hidden;
+}
+
+.site,
+.wrapper {
+  height: 100%;
+}
+
+.wrapper {
+  display: flex;
+  flex-direction: column;
+}
+
+.main {
+  flex: 1;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin: 0;
+}
+
+a {
+  display: inline-block;
+  color: #52a5ed;
+  text-decoration: none;
+  transition: 0.15s ease-out;
+
+  &:hover {
+    color: #ff6262;
+    text-decoration: none;
+  }
+}
+
+p {
+  margin-bottom: 0;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+.section {
+  padding: 80px 0;
+
+  @include media-breakpoint-down(sm) {
+    padding: 50px 0;
+  }
+
+  &__title {
+    font-weight: 600;
+    font-size: 27px;
+    line-height: 33px;
+    text-align: center;
+    margin-bottom: 25px;
+
+    @include media-breakpoint-down(sm) {
+      font-size: 28px;
+      line-height: 34px;
+    }
+
+    @include media-breakpoint-down(xs) {
+      font-size: 26px;
+      line-height: 30px;
+    }
+  }
+
+  &__subtitle {
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 19px;
+    margin-bottom: 20px;
+  }
+
+  &__description {
+    @include media-breakpoint-down(md) {
+      font-size: 20px;
+      line-height: 24px;
+    }
+
+    @include media-breakpoint-down(sm) {
+      text-align: center;
+    }
+
+    @include media-breakpoint-down(xs) {
+      font-weight: 600;
+      font-size: 16px;
+      line-height: 19px;
+    }
+  }
+
+  &__img {
+    @include media-breakpoint-down(sm) {
+      margin: 0 auto 32px;
+      display: block;
+    }
+  }
+}
+
+.title {
+  font-size: 2.5rem;
+  font-weight: 400;
+  line-height: 2.875rem;
+  margin: 0;
+}
+
+.button {
+  font-family: 'Fira Sans', Arial, sans-serif;
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 20px;
+  background: $color-violet;
+  color: #ffffff;
+  border: 0;
+  border-radius: 8px;
+  padding: 14px 23px;
+  transition: 0.15s ease-out;
+
+  &:hover {
+    background: darken($color-violet, 10);
+  }
+
+  &_transparent {
+    background-color: transparent;
+    border: 2px solid $color-grey;
+    color: $color-violet;
+    transition: background-color 0.15s ease-out;
+
+    &:hover {
+      background-color: $color-violet;
+      border-color: $color-violet;
+      color: $color-white;
+    }
+  }
+
+  &_start {
+    background-color: $color-violet;
+    border-radius: 6px;
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 19px;
+    padding: 16px 32px;
+    transition: background-color 0.15s ease-out;
+
+    &:hover {
+      background: darken($color-violet, 10);
+      text-decoration: none;
+      color: $color-white;
+    }
+  }
+}
+
+.hide {
+  opacity: 0;
+  visibility: hidden;
+}
+
+.text-blue-light {
+  color: $color-violet;
+}
+
+.overflow-hidden {
+  overflow: hidden;
+}
+
+.order-first {
+  order: 1;
+
+  @include media-breakpoint-down(sm) {
+    order: -1;
+  }
+}
+
+.order-middle-1 {
+  @include media-breakpoint-down(md) {
+    order: 1;
+  }
+}
+
+.order-small-1 {
+  @include media-breakpoint-down(sm) {
+    order: 1;
+  }
+}
