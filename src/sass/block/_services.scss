@@ -1,0 +1,84 @@
+.services {
+  background: $color-blue-dark;
+
+  &__number {
+    top: -200px;
+    left: -30px;
+  }
+
+  &__heading {
+    max-width: 630px;
+    width: 100%;
+    margin: 0 auto 100px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  &__name {
+    margin-bottom: 30px;
+  }
+
+  &__title {
+    margin-bottom: 30px;
+    color: $color-white;
+  }
+
+  &__text {
+    color: $color-white;
+  }
+
+  &__list {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  &__item {
+    padding: 30px;
+
+    &:last-child {
+      padding: 0;
+      background: $color-blue;
+      color: $color-white;
+    }
+
+    &-img {
+      margin-bottom: 30px;
+    }
+
+    &-title {
+      font-size: 18px;
+      font-style: normal;
+      font-weight: 500;
+      line-height: 130%;
+      color: $color-white;
+      margin-bottom: 20px;
+    }
+
+    &-text {
+      font-size: 14px;
+      font-style: normal;
+      font-weight: 400;
+      line-height: 160%;
+      color: $color-white;
+      margin-bottom: 30px;
+    }
+
+    &-inner {
+      height: 100%;
+      padding: 50px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      align-items: flex-start;
+    }
+
+    &-question {
+      font-size: 32px;
+      font-style: normal;
+      font-weight: 700;
+      line-height: 130%;
+    }
+  }
+}

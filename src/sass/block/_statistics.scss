@@ -1,0 +1,32 @@
+.statistics {
+  padding-bottom: 200px;
+
+  &__list {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 40px;
+  }
+
+  &__item {
+    border-left: 1px solid $color-blue;
+    padding: 0 0 10px 30px;
+    background: linear-gradient(to right, #F0F1F4 20%, #fff 20%);
+
+    &-number {
+      font-size: 45px;
+      font-style: normal;
+      font-weight: 500;
+      line-height: 130%;
+      color: $color-blue;
+      margin-bottom: 15px;
+    }
+
+    &-title {
+      font-size: 16px;
+      font-style: normal;
+      line-height: 130%;
+      color: $color-blue-dark;
+      margin-bottom: 15px;
+    }
+  }
+}
