@@ -1,0 +1,20 @@
+.strategy {
+  background: url("../img/strategy.jpg") center/cover no-repeat;
+  padding: 165px 0;
+
+  &__content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  &__name {
+    margin-bottom: 30px;
+    color: $color-white;
+  }
+
+  &__title {
+    color: $color-white;
+  }
+}

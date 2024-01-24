@@ -1,0 +1,53 @@
+.partners {
+  background: #F0F1F4;
+
+  &__number {
+    right: 0;
+    top: -100px;
+  }
+
+  &__name {
+    margin: 30px;
+  }
+
+  &__title {
+    color: $color-blue-dark;
+    margin-bottom: 30px;
+  }
+
+  &__text {
+    margin-bottom: 50px;
+  }
+
+  &__list {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 40px;
+  }
+
+  &__item {
+    background: $color-white;
+    padding: 30px;
+
+    &-img {
+      margin-bottom: 30px;
+    }
+
+    &-title {
+      font-size: 18px;
+      font-style: normal;
+      font-weight: 500;
+      line-height: 130%;
+      margin-bottom: 20px;
+      color: $color-blue-dark;
+    }
+
+    &-text {
+      font-size: 14px;
+      font-style: normal;
+      font-weight: 400;
+      line-height: 160%;
+      margin-bottom: 30px;
+    }
+  }
+}

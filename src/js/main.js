@@ -1,5 +1,7 @@
 // import $ from 'jquery';
-import AOS from 'aos';
+// import AOS from 'aos';
+import Swiper from 'swiper';
+import { Navigation, Scrollbar } from 'swiper/modules';
 
 const initStickyHeader = e => {
     const header = document.querySelector('.header');
@@ -60,23 +62,39 @@ const hidePreloader = () => {
 //     statisticsObserver.observe(statisticsSection);
 // }
 
+const initSlider = () => {
+    const swiper = new Swiper('.swiper', {
+        modules: [Navigation, Scrollbar],
+        slidesPerView: 2,
+        spaceBetween: 20,
+        navigation: {
+            nextEl: '.swiper-button-next',
+            prevEl: '.swiper-button-prev',
+        },
+        scrollbar: {
+            el: '.swiper-scrollbar',
+        },
+    });
+}
+
 const resizeHandler = () => {
 
 }
 
 const domContentLoadedHandler = () => {
     // initAnimatedNumbers()
+    initSlider();
     window.addEventListener('scroll', initStickyHeader);
 }
 
 const loadHandler = () => {
-    AOS.init({
-        duration: 500,
-        easing: "ease-in-out",
-        once: true,
-        mirror: false,
-        disable: window.innerWidth < 768
-    });
+    // AOS.init({
+    //     duration: 500,
+    //     easing: "ease-in-out",
+    //     once: true,
+    //     mirror: false,
+    //     disable: window.innerWidth < 768
+    // });
 
     hidePreloader();
 }
