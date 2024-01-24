@@ -4,6 +4,14 @@
   &__number {
     top: -200px;
     left: 15px;
+
+    @include media-breakpoint-down(md) {
+      top: -125px;
+    }
+
+    @include media-breakpoint-down(sm) {
+      top: -100px;
+    }
   }
 
   &__heading {
@@ -14,6 +22,11 @@
     flex-direction: column;
     align-items: center;
     text-align: center;
+
+    @include media-breakpoint-down(md) {
+      max-width: 100%;
+      margin: 0 auto 50px;
+    }
   }
 
   &__name {
@@ -32,10 +45,23 @@
   &__list {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
+
+    @include media-breakpoint-down(md) {
+      grid-template-columns: 1fr 1fr;
+    }
+
+    @include media-breakpoint-down(sm) {
+      grid-template-columns: 1fr;
+    }
   }
 
   &__item {
     padding: 30px;
+
+    @include media-breakpoint-down(xs) {
+      padding: 0;
+      margin-bottom: 40px;
+    }
 
     &:last-child {
       padding: 0;
@@ -72,6 +98,10 @@
       flex-direction: column;
       justify-content: space-between;
       align-items: flex-start;
+
+      @include media-breakpoint-down(xs) {
+        padding: 30px;
+      }
     }
 
     &-question {
@@ -79,6 +109,12 @@
       font-style: normal;
       font-weight: 700;
       line-height: 130%;
+
+      @include media-breakpoint-down(sm) {
+        margin-bottom: 30px;
+        font-size: 28px;
+        line-height: 38px;
+      }
     }
   }
 }

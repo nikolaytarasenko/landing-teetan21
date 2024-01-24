@@ -3,13 +3,35 @@
   padding: 80px 0;
   color: $color-white;
 
+  @include media-breakpoint-down(md) {
+    background: darken($color-blue, 30);
+  }
+
+  .footer-row {
+    @include media-breakpoint-down(md) {
+      flex-direction: column-reverse;
+    }
+  }
+
   &__number {
     right: 0;
     top: -180px;
+
+    @include media-breakpoint-down(md) {
+      top: -130px;
+    }
+
+    @include media-breakpoint-down(xs) {
+      right: 15px;
+    }
   }
 
   &__content {
     max-width: 400px;
+
+    @include media-breakpoint-down(md) {
+      max-width: 100%;
+    }
   }
 
   &__logo {
@@ -54,6 +76,11 @@
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+
+    @include media-breakpoint-down(md) {
+      padding-left: 0;
+      margin-bottom: 70px;
+    }
   }
 
   &__title {
@@ -76,7 +103,9 @@
       margin-left: 12px;
     }
 
-
+    textarea {
+      resize: none;
+    }
   }
 
   .form-control {

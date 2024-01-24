@@ -1,6 +1,10 @@
 .clients {
   padding-top: 200px;
 
+  @include media-breakpoint-down(md) {
+    padding-top: 80px;
+  }
+
   .first-row {
     margin-bottom: 100px;
   }
@@ -8,6 +12,11 @@
   &__number {
     right: 0;
     top: -190px;
+
+    @include media-breakpoint-down(md) {
+      top: -120px;
+      right: 15px;
+    }
   }
 
   &__name {
@@ -16,6 +25,10 @@
 
   &__title {
     color: $color-blue-dark;
+
+    @include media-breakpoint-down(md) {
+      margin-bottom: 30px;
+    }
   }
 
   &__info {
@@ -29,6 +42,11 @@
     flex-wrap: wrap;
     align-items: center;
     justify-content: space-between;
+
+    @include media-breakpoint-down(xs) {
+      flex-direction: column;
+      gap: 50px;
+    }
   }
 
   &__item {

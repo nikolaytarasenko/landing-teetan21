@@ -10,6 +10,10 @@
     z-index: 99;
   }
 
+  @include media-breakpoint-down(md) {
+    background: $color-black;
+  }
+
   &.sticky {
     position: fixed;
     top: 0;
@@ -22,7 +26,11 @@
       min-width: 120px;
 
       img {
-        max-width: 80px;
+        max-width: 70px;
+
+        @include media-breakpoint-down(xs) {
+          max-width: 60px;
+        }
       }
     }
   }
@@ -31,12 +39,24 @@
     margin-right: 50px;
     transition: 0.15s ease-out;
 
+    @include media-breakpoint-down(md) {
+      margin-right: 0;
+    }
+
     &:hover {
       opacity: 0.7;
     }
 
     img {
       transition: 0.15s ease-out;
+
+      @include media-breakpoint-down(md) {
+        max-width: 90px;
+      }
+
+      @include media-breakpoint-down(xs) {
+        max-width: 70px;
+      }
     }
   }
 
@@ -45,6 +65,10 @@
   }
 
   &__phone {
+    @include media-breakpoint-down(md) {
+      margin: 20px 0;
+    }
+
     &-link {
       display: flex;
       align-items: center;
@@ -64,10 +88,28 @@
       }
     }
   }
+
+  .navbar-toggler {
+    &[aria-expanded="false"] {
+      background: url("../img/burger.png") center/contain no-repeat;
+    }
+
+    &[aria-expanded="true"] {
+      background: url("../img/close.png") center/contain no-repeat;
+    }
+  }
 }
 
 .navbar-nav {
   gap: 50px;
+
+  @include media-breakpoint-down(lg) {
+    gap: 20px;
+  }
+
+  @include media-breakpoint-down(md) {
+    margin-top: 20px;
+  }
 
   &__link {
     position: relative;

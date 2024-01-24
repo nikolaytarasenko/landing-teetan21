@@ -3,22 +3,22 @@ header.header
         nav.navbar.navbar-expand-lg
             a.navbar-brand.logo(href='/')
                 img(src="./img/logo.png" alt="Logo")
-            button.navbar-toggler(type='button' data-toggle='collapse' data-target='#navbarText' aria-controls='navbarText' aria-expanded='false' aria-label='Toggle navigation')
+            button.navbar-toggler(type='button' data-toggle='collapse' data-target='#navbarMenu' aria-controls='navbarMenu' aria-expanded='false' aria-label='Toggle navigation')
                 span.navbar-toggler-icon
-            #navbarText.collapse.navbar-collapse
+            #navbarMenu.collapse.navbar-collapse
                 ul.navbar-nav.mr-auto
                     li.navbar-nav__item
-                        a.navbar-nav__link(href='#') About us
+                        a.navbar-nav__link(href='#about' data-toggle="collapse" data-target=".navbar-collapse.show") About us
                     li.navbar-nav__item
-                        a.navbar-nav__link(href='#') Our services
+                        a.navbar-nav__link(href='#services' data-toggle="collapse" data-target=".navbar-collapse.show") Our services
                     li.navbar-nav__item
-                        a.navbar-nav__link(href='#') Verticals
+                        a.navbar-nav__link(href='#verticals' data-toggle="collapse" data-target=".navbar-collapse.show") Verticals
                     li.navbar-nav__item
-                        a.navbar-nav__link(href='#') Partners
+                        a.navbar-nav__link(href='#partners' data-toggle="collapse" data-target=".navbar-collapse.show") Partners
                     li.navbar-nav__item
-                        a.navbar-nav__link(href='#') Clients
+                        a.navbar-nav__link(href='#clients' data-toggle="collapse" data-target=".navbar-collapse.show") Clients
                     li.navbar-nav__item
-                        a.navbar-nav__link(href='#') Get in touch
+                        a.navbar-nav__link(href='#contact' data-toggle="collapse" data-target=".navbar-collapse.show") Get in touch
                 div.header__phone
                     a.header__phone-link(href="tel:+919971466668")
                         svg(xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none')

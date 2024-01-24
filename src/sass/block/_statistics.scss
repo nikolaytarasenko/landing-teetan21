@@ -1,10 +1,22 @@
 .statistics {
   padding-bottom: 200px;
 
+  @include media-breakpoint-down(sm) {
+    padding-bottom: 150px;
+  }
+
+  @include media-breakpoint-down(xs) {
+    padding-bottom: 100px;
+  }
+
   &__list {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     gap: 40px;
+
+    @include media-breakpoint-down(md) {
+      grid-template-columns: 1fr;
+    }
   }
 
   &__item {

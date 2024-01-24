@@ -9,6 +9,11 @@
 
   @include media-breakpoint-down(sm) {
     min-height: unset;
+    padding: 180px 0 100px;
+  }
+
+  @include media-breakpoint-down(xs) {
+    padding: 130px 0 100px;
   }
 
   &__content {
@@ -24,6 +29,16 @@
     font-size: 45px;
     line-height: 58px;
     margin-bottom: 30px;
+
+    @include media-breakpoint-down(sm) {
+      font-size: 34px;
+      line-height: 44px;
+    }
+
+    @include media-breakpoint-down(xs) {
+      font-size: 30px;
+      line-height: 40px;
+    }
   }
 
   &__description {
@@ -37,5 +52,9 @@
   &__buttons {
     display: flex;
     gap: 28px;
+
+    @include media-breakpoint-down(xs) {
+      flex-direction: column;
+    }
   }
 }

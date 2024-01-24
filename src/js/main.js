@@ -1,5 +1,5 @@
-// import $ from 'jquery';
-// import AOS from 'aos';
+import 'bootstrap/dist/js/bootstrap.bundle.min'
+import AOS from 'aos';
 import Swiper from 'swiper';
 import { Navigation, Scrollbar } from 'swiper/modules';
 
@@ -17,51 +17,6 @@ const hidePreloader = () => {
     preloaderWrapper.classList.add('hide');
 }
 
-// const initAnimatedNumbers = () => {
-//     const statisticsSection = document.querySelector('.statistics__list');
-//
-//     const statisticsObserver = new IntersectionObserver(
-//         (entries, observer) => {
-//             const [entry] = entries;
-//
-//             if (!entry.isIntersecting) return;
-//
-//             // animate number counter
-//             const counterNum = document.querySelectorAll('.statistics__item-number');
-//
-//             const speed = 30;
-//
-//             counterNum.forEach((curElem) => {
-//                 const updateNumber = () => {
-//                     const targetNumber = parseInt(curElem.dataset.number);
-//                     console.log('1 - target:', targetNumber);
-//                     const initialNum = parseInt(curElem.textContent);
-//                     console.log(typeof initialNum);
-//
-//                     const incrementNumber = Math.trunc(targetNumber / speed);
-//                     console.log('2 - incrementNumber:', incrementNumber);
-//
-//                     if (initialNum < targetNumber) {
-//                         console.log('yes')
-//                         curElem.textContent = `${initialNum + incrementNumber}+`;
-//                         setTimeout(updateNumber, 10);
-//                     }
-//                 };
-//
-//                 updateNumber();
-//             });
-//
-//             observer.unobserve(statisticsSection);
-//         },
-//         {
-//             root: null,
-//             threshold: 0,
-//         }
-//     );
-//
-//     statisticsObserver.observe(statisticsSection);
-// }
-
 const initSlider = () => {
     const swiper = new Swiper('.swiper', {
         modules: [Navigation, Scrollbar],
@@ -77,28 +32,72 @@ const initSlider = () => {
     });
 }
 
-const resizeHandler = () => {
+const scrollToSection = () => {
+    const navLinks = document.querySelectorAll('.navbar-nav__link');
+    const heroLinks = document.querySelectorAll('.hero__button');
+    const servicesLink = document.querySelector('.services__button');
 
+    [...navLinks, ...heroLinks, servicesLink].forEach(link => {
+        link.addEventListener('click', function(e) {
+            e.preventDefault();
+            const currentLink = e.target;
+            const id = currentLink.getAttribute('href').slice(1);
+
+            const targetSection = document.querySelector(`#${id}`);
+
+            targetSection.scrollIntoView({
+                behavior: 'smooth'
+            });
+        });
+    });
+}
+
+const initToTopButton = () => {
+    const backToTopButton = document.querySelector('.back-to-top');
+
+    const scrollContainer = () => {
+        return document.documentElement || document.body;
+    }
+
+    const goToTop = () => {
+        document.body.scrollIntoView({
+            behavior: "smooth"
+        });
+    };
+
+    document.addEventListener('scroll', () => {
+        if (scrollContainer().scrollTop > 100) {
+            backToTopButton.classList.remove('hidden');
+        } else {
+            backToTopButton.classList.add('hidden');
+        }
+    });
+
+    backToTopButton.addEventListener('click', goToTop);
+}
+
+const scrollHandler = () => {
+    initStickyHeader();
 }
 
 const domContentLoadedHandler = () => {
-    // initAnimatedNumbers()
+    scrollToSection();
     initSlider();
-    window.addEventListener('scroll', initStickyHeader);
+    initToTopButton();
+    window.addEventListener('scroll', scrollHandler);
 }
 
 const loadHandler = () => {
-    // AOS.init({
-    //     duration: 500,
-    //     easing: "ease-in-out",
-    //     once: true,
-    //     mirror: false,
-    //     disable: window.innerWidth < 768
-    // });
+    AOS.init({
+        duration: 500,
+        easing: "ease-in-out",
+        once: true,
+        mirror: false,
+        disable: window.innerWidth < 768
+    });
 
     hidePreloader();
 }
 
-window.addEventListener('resize', resizeHandler);
 window.addEventListener('DOMContentLoaded', domContentLoadedHandler);
 window.addEventListener('load', loadHandler);

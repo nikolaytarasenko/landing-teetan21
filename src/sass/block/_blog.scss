@@ -1,6 +1,10 @@
 .blog {
   padding-bottom: 120px;
 
+  @include media-breakpoint-down(sm) {
+    padding-bottom: 80px;
+  }
+
   .first-row {
     margin-bottom: 80px;
   }
@@ -18,15 +22,34 @@
     display: flex;
     align-items: flex-end;
     justify-content: flex-end;
+
+    @include media-breakpoint-down(md) {
+      margin-top: 30px;
+      justify-content: flex-start;
+      align-items: center;
+    }
   }
 
   &__list {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
+
+    @include media-breakpoint-down(md) {
+      grid-template-columns: 1fr 1fr;
+    }
+
+    @include media-breakpoint-down(sm) {
+      grid-template-columns: 1fr;
+    }
   }
 
   &__item {
     padding: 30px;
+
+    @include media-breakpoint-down(xs) {
+      padding: 0;
+      margin-bottom: 30px;
+    }
 
     &-img {
       margin-bottom: 30px;

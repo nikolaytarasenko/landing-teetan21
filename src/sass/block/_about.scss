@@ -1,10 +1,27 @@
 .about {
   background: linear-gradient(to right, #fff 35%, #F0F1F4 35%);
 
+  @include media-breakpoint-down(md) {
+    background: #F0F1F4;
+  }
+
   &__decor-wrapper {
     position: absolute;
     top: 80px;
     left: -120%;
+
+    @include media-breakpoint-down(lg) {
+      top: 120px;
+      width: 430px;
+    }
+
+    @include media-breakpoint-down(md) {
+      position: relative;
+      top: unset;
+      left: unset;
+      width: auto;
+      margin-bottom: 30px;
+    }
   }
 
   &__content {
@@ -13,6 +30,10 @@
     flex-direction: column;
     justify-content: center;
     align-items: flex-start;
+
+    @include media-breakpoint-down(md) {
+      min-height: unset;
+    }
   }
 
   &__name {

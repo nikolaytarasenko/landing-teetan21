@@ -1,9 +1,21 @@
 .verticals {
   padding-top: 225px;
 
+  @include media-breakpoint-down(md) {
+    padding-top: 130px;
+  }
+
+  @include media-breakpoint-down(xs) {
+    padding-top: 100px;
+  }
+
   &__number {
     top: -180px;
     left: 15px;
+
+    @include media-breakpoint-down(xs) {
+      top: -125px;
+    }
   }
 
   &__name {
@@ -21,6 +33,10 @@
 
   &__button-wrapper {
     margin-top: 50px;
+
+    @include media-breakpoint-down(xs) {
+      margin-bottom: 30px;
+    }
   }
 
   &__slide {
