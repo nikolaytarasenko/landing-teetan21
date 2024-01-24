@@ -1,3 +1,37 @@
-footer.footer
-    .container
+footer.footer#contact
+    .container.position-relative
+        .section__number.footer__number
+            img(src="./img/06.svg" alt="06")
         .row
+            .col-lg-5
+                .footer__content
+                    a.footer__logo(href="/")
+                        img(src="./img/logo.png" alt="Teetan21")
+                    p.footer__address 4th floor, Statesman House Barakhamba Road, Connaught Place, New Delhi-110001
+                    p.footer__email info@teetan21.com
+                    p.footer__phone +91 99714 66668
+                    .footer__socials
+                        a.footer__social-link(href="#")
+                            img(src="./img/instagram.svg" alt="Instagram")
+                        a.footer__social-link(href="#")
+                            img(src="./img/facebook.svg" alt="Facebook")
+                        a.footer__social-link(href="#")
+                            img(src="./img/x.svg" alt="X")
+                    p.footer__copyright #[strong © TEETAN21]. All Rights Reserved 2022.
+                    p.footer__author Powered by Tarasenko MV
+            .col-lg-7
+                .footer__form-content
+                    h2.section__title.footer__title Contact us
+                    p.section__text.footer__text Discover hor our strategy can boost your sales and give you better margins on every purchase today
+                    form.footer__form
+                        .form-group
+                            label(for="user-name") Full name
+                            input(class="form-control" type="text" id="user-name" placeholder="Write you Full Name")
+                        .form-group
+                            label(for="user-email") Your email address
+                            input(class="form-control" type="email" id="user-email" placeholder="Write you email")
+                        .form-group
+                            label(for="user-message") Your message
+                            textarea(class="form-control" id="user-message" placeholder="Write you message...")
+                        .form-group
+                            button.button.button--white(type="submit") get in touch

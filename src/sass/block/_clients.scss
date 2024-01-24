@@ -1,0 +1,71 @@
+.clients {
+  padding-top: 200px;
+
+  .first-row {
+    margin-bottom: 100px;
+  }
+
+  &__number {
+    right: 0;
+    top: -190px;
+  }
+
+  &__name {
+    margin-bottom: 30px;
+  }
+
+  &__title {
+    color: $color-blue-dark;
+  }
+
+  &__info {
+    border-left: 1px solid $color-blue;
+    background: #F0F1F4;
+    padding: 44px 26px;
+  }
+
+  &__list {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  &__item {
+    position: relative;
+    width: 180px;
+    height: 180px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: 0.15s ease-out;
+
+    &-box {
+      position: absolute;
+      left: 0;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      height: 100%;
+      width: 100%;
+      background: #F9F9F9;
+      z-index: 4;
+      animation: rotation 3s linear infinite;
+    }
+
+    &-img {
+      position: relative;
+      z-index: 5;
+    }
+  }
+}
+
+@keyframes rotation {
+  from {
+    transform: rotate(0);
+  }
+
+  to {
+    transform: rotate(180deg);
+  }
+}
